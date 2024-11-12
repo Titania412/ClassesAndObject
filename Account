@@ -1,0 +1,69 @@
+
+public class Account {
+	private java.util.Date dateCreated = new java.util.Date();		
+	private int id = 0;
+	private double balance = 0;
+	private double annualInterestRate = 0.02;
+	
+	public Account () {
+		dateCreated = new java.util.Date();
+		
+	}
+	
+	public Account(int id, double balance) {
+		dateCreated = new java.util.Date();
+		this.id = id;
+		this.balance = balance;
+		
+	}
+
+	public java.util.Date getDateCreated() {
+		return dateCreated;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+
+	public void setBalance(double newbalance) {
+		this.balance = newbalance;
+	}
+
+	public double getAnnualInterestRate() {
+		return annualInterestRate;
+	}
+
+	public void setAnnualInterestRate(double newRate) {
+		this.annualInterestRate = newRate;
+	}
+
+	public double getMonthlyInterestRate() {
+		return annualInterestRate/12;
+	}
+	
+	public double getMonthlyInterest() {
+		return balance * getMonthlyInterestRate();
+	}
+	
+	public String toString() {
+		return "Account: \tDate Created: " + dateCreated + "\nID:" + id + "\nBalance: $" + balance
+				+ "\nAnnual Interest Rate: " + annualInterestRate;
+	}
+	
+	public void deposit(double depositAmount) {
+		 balance += depositAmount;
+	}
+	
+	public void withdraw(double withdrawAmount) {
+		balance -= withdrawAmount;
+	}
+
+}
