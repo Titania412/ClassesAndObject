@@ -1,0 +1,13 @@
+public class AccountTest {
+	public static void main(String[] arg) {
+		Account Account1 = new Account();
+		
+		Account1.setId(1122);
+		Account1.setBalance(20000);
+		Account1.setAnnualInterestRate(0.045);
+		Account1.withdraw(2500);
+		System.out.println(Account1.toString());
+		
+		System.out.println("\nBalance: $" + Account1.getBalance() + "\nMonthly Intrest: $" + Account1.getMonthlyInterest() + "\nDate: " + Account1.getDateCreated());
+	}
+}
